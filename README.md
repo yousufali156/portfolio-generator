@@ -2,7 +2,9 @@
 
 **PortfoGen** is a beautiful, responsive portfolio generator that allows users to create and preview modern personal portfolios using multiple themes. It features a user-friendly interface, live preview of templates, and an easy "About Me" section editor — all in one smooth SPA experience.
 
-![PortfoGen Banner](public/banner.png)
+## Live Link [https://yousuf-portfolio-generator.netlify.app/](https://yousuf-portfolio-generator.netlify.app/)
+
+![PortfoGen Banner](https://i.ibb.co/zWRgsNWZ/yousuf-portfolio-gen.jpg)
 
 ---
 
