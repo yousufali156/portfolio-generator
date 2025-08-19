@@ -2,7 +2,7 @@ import React from 'react';
 import Footer from './Footer';
 
 const HomePage = ({ setPage }) => (
-    <div className="text-center py-20 px-4 bg-gray-50">
+    <div className="text-center py-20 px-6 bg-gray-50">
         <h1 className="text-4xl md:text-6xl font-extrabold text-gray-800 mb-4">Create a Stunning Developer Portfolio in Minutes</h1>
         <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">No coding required. Just fill in your details, choose a template, and get a professional portfolio website instantly.</p>
         <button onClick={() => setPage('generator')}
