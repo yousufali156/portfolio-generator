@@ -9,11 +9,45 @@ import {
   FaExternalLinkAlt,
   FaPaperPlane,
 } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { GraduationCap } from 'lucide-react';
 import Footer from '../Footer';
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.12 }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 18 },
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 12 } }
+};
+
+const entries = [
+  {
+    degree: "Master of Social Science (MSS) in Economics",
+    college: "Govt. Azizul Haque College, Bogura",
+    university: "National University, Bangladesh",
+    session: "2019 - 2020",
+    description:
+      "Completed MSS in Economics with strong grounding in economic theory, statistics, and research. Now working as a Full Stack Developer, applying analytical thinking to build scalable web solutions."
+  },
+  {
+    degree: "Bachelor of Social Science (BSS) in Economics",
+    college: "Govt. Azizul Haque College, Bogura",
+    university: "National University, Bangladesh",
+    session: "2014 - 2015",
+    description: "Focused on microeconomics, macroeconomics, public finance, statistics, and development studies with practical research orientation."
+  }
+
+];
 
 const About = () => {
   return (
-    <div className="text-gray-800 bg-white">
+    <div className="text-gray-800 bg-white mt-16">
       {/* Hero Section */}
       <section className="px-4 sm:px-6 lg:px-16 py-12 bg-gradient-to-br from-blue-50 to-white text-center">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">Md. Yousuf Ali</h1>
@@ -84,22 +118,72 @@ const About = () => {
       </section>
 
       {/* Education Section */}
-      <section className="px-4 sm:px-6 lg:px-16 py-12 bg-gray-50">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">Education</h2>
-
-        <div className="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
-          <p className="mb-2 font-semibold">🎓 Master of Social Science in Economics</p>
-          <p>
-            I completed my Master's in Economics from <strong>Govt. Azizul Haque College, Bogura</strong> <br />
-            <em>Session: 2019–2020</em>
-          </p>
-          <p className="mt-4">
-            I'm Md. Yousuf Ali, completed my MSS in Economics with a strong foundation in economic theory, statistics,
-            and research. Now working as a Full Stack Developer, combining analytical thinking with modern web
-            technologies to build scalable digital solutions.
-          </p>
+      <motion.section
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={container}
+        className="relative px-4 sm:px-6 lg:px-16 py-14 bg-gray-50"
+        id="education"
+      >
+        {/* Decorative gradient blob */}
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="absolute -top-24 -right-20 h-64 w-64 rounded-full bg-gradient-to-br from-indigo-200 via-indigo-100 to-transparent blur-3xl opacity-60" />
+          <div className="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-gradient-to-tr from-emerald-200 via-emerald-100 to-transparent blur-3xl opacity-60" />
         </div>
-      </section>
+
+        <motion.h2
+          variants={item}
+          className="relative z-10 text-3xl sm:text-4xl font-bold text-gray-900 mb-10 text-center tracking-tight"
+        >
+          Education
+        </motion.h2>
+
+        <motion.div
+          variants={item}
+          className="relative z-10 max-w-4xl mx-auto grid gap-6 sm:gap-7"
+        >
+          {entries.map((e, idx) => (
+            <motion.article
+              key={idx}
+              variants={item}
+              className="group rounded-2xl bg-white/90 backdrop-blur border border-gray-100 shadow-sm hover:shadow-md transition-shadow p-6 sm:p-7"
+            >
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 mt-1">
+                  <div className="h-11 w-11 rounded-2xl bg-gray-900/90 flex items-center justify-center">
+                    <GraduationCap className="h-5 w-5 text-white" />
+                  </div>
+                </div>
+
+                <div className="flex-1">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 leading-snug">
+                    {e.degree}
+                  </h3>
+                  <p className="text-gray-700 mt-1">
+                    {e.college}
+                    <span className="mx-2">•</span>
+                    {e.university}
+                  </p>
+
+                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                    <span className="inline-flex items-center rounded-full border border-gray-200 px-3 py-1 bg-gray-50 text-gray-800">
+                      Session: <span className="font-medium ml-1">{e.session}</span>
+                    </span>
+
+                  </div>
+
+                  {e.description && (
+                    <p className="mt-4 text-gray-700 leading-relaxed">
+                      {e.description}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
+      </motion.section>
 
       {/* Contact Section */}
       <section className="px-4 sm:px-6 lg:px-16 py-12 bg-white">
@@ -122,7 +206,7 @@ const About = () => {
             <a href="https://github.com/yousufali156" target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
-            <a href="https://x.com/yousufali156" target="_blank" rel="noopener noreferrer">
+            <a href="https://x.com/yousufdev156" target="_blank" rel="noopener noreferrer">
               <FaTwitter />
             </a>
             <a href="https://www.facebook.com/yousufali156" target="_blank" rel="noopener noreferrer">
@@ -131,7 +215,7 @@ const About = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
