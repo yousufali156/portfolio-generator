@@ -128,9 +128,8 @@ const GeneratorPage = ({ selectedTemplate, setSelectedTemplate }) => {
 
   const TemplateOption = ({ value, label, imgSrc }) => (
     <label
-      className={`cursor-pointer border-2 rounded-lg p-2 flex flex-col items-center transition-all duration-200 ${
-        portfolioData.template === value ? 'border-indigo-500' : 'border-gray-300'
-      }`}
+      className={`cursor-pointer border-2 rounded-lg p-2 flex flex-col items-center transition-all duration-200 ${portfolioData.template === value ? 'border-indigo-500' : 'border-gray-300'
+        }`}
     >
       <input
         type="radio"
@@ -146,7 +145,7 @@ const GeneratorPage = ({ selectedTemplate, setSelectedTemplate }) => {
   );
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen">
+    <div className="flex mt-16 flex-col lg:flex-row min-h-screen">
       {/* Left side: Form and template selector */}
       <div className="w-full lg:w-4/12 xl:w-5/12 bg-gray-50 overflow-y-auto">
         <div className="p-4 bg-white rounded-b-lg lg:rounded-none lg:rounded-r-lg shadow lg:sticky lg:top-0 z-10">

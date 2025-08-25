@@ -68,9 +68,8 @@ const Navbar = ({ page, setPage, selectedTemplate, setSelectedTemplate }) => {
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={() => handleNavClick('home')}
-            className={`text-gray-700 hover:text-blue-600 font-medium rounded-lg text-sm px-3 py-2 ${
-              page === 'home' ? 'border-b-2 border-blue-600' : ''
-            }`}
+            className={`text-gray-700 hover:text-blue-600 font-medium rounded-lg text-sm px-3 py-2 ${page === 'home' ? 'border-b-2 border-blue-600' : ''
+              }`}
           >
             Home
           </button>
@@ -80,9 +79,8 @@ const Navbar = ({ page, setPage, selectedTemplate, setSelectedTemplate }) => {
               key={key}
               onClick={() => handleTemplateClick(key)}
               type="button"
-              className={`text-gray-700 hover:text-blue-600 font-medium rounded-lg text-sm px-3 py-2 ${
-                page === 'generator' && selectedTemplate === key ? 'border-b-2 border-blue-600' : ''
-              }`}
+              className={`text-gray-700 hover:text-blue-600 font-medium rounded-lg text-sm px-3 py-2 ${page === 'generator' && selectedTemplate === key ? 'border-b-2 border-blue-600' : ''
+                }`}
             >
               {label}
             </button>
@@ -90,9 +88,8 @@ const Navbar = ({ page, setPage, selectedTemplate, setSelectedTemplate }) => {
 
           <button
             onClick={() => handleNavClick('about')}
-            className={`text-gray-700 hover:text-blue-600 font-medium rounded-lg text-sm px-3 py-2 ${
-              page === 'about' ? 'border-b-2 border-blue-600' : ''
-            }`}
+            className={`text-gray-700 hover:text-blue-600 font-medium rounded-lg text-sm px-3 py-2 ${page === 'about' ? 'border-b-2 border-blue-600' : ''
+              }`}
           >
             About Me
           </button>
@@ -112,9 +109,8 @@ const Navbar = ({ page, setPage, selectedTemplate, setSelectedTemplate }) => {
           <div className="flex flex-col space-y-2 mt-2">
             <button
               onClick={() => handleNavClick('home')}
-              className={`text-left text-gray-700 font-medium rounded-lg px-4 py-2 ${
-                page === 'home' ? 'bg-blue-100 text-blue-700' : 'hover:bg-gray-100'
-              }`}
+              className={`text-left text-gray-700 font-medium rounded-lg px-4 py-2 ${page === 'home' ? 'bg-blue-100 text-blue-700' : 'hover:bg-gray-100'
+                }`}
             >
               Home
             </button>
@@ -123,11 +119,10 @@ const Navbar = ({ page, setPage, selectedTemplate, setSelectedTemplate }) => {
               <button
                 key={key}
                 onClick={() => handleTemplateClick(key)}
-                className={`text-left text-gray-700 font-medium rounded-lg px-4 py-2 ${
-                  page === 'generator' && selectedTemplate === key
-                    ? 'bg-blue-100 text-blue-700'
-                    : 'hover:bg-gray-100'
-                }`}
+                className={`text-left text-gray-700 font-medium rounded-lg px-4 py-2 ${page === 'generator' && selectedTemplate === key
+                  ? 'bg-blue-100 text-blue-700'
+                  : 'hover:bg-gray-100'
+                  }`}
               >
                 {label}
               </button>
@@ -135,9 +130,8 @@ const Navbar = ({ page, setPage, selectedTemplate, setSelectedTemplate }) => {
 
             <button
               onClick={() => handleNavClick('about')}
-              className={`text-left text-gray-700 font-medium rounded-lg px-4 py-2 ${
-                page === 'about' ? 'bg-blue-100 text-blue-700' : 'hover:bg-gray-100'
-              }`}
+              className={`text-left text-gray-700 font-medium rounded-lg px-4 py-2 ${page === 'about' ? 'bg-blue-100 text-blue-700' : 'hover:bg-gray-100'
+                }`}
             >
               About Me
             </button>

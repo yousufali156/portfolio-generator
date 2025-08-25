@@ -1,14 +1,3 @@
-// import React from 'react';
-
-// const Template1 = ({ data }) => ( /* Light Corporate */ <div className="font-sans bg-white text-gray-800 p-8"><header className="text-center py-10 bg-gray-100 rounded-lg"><img src={data.personalInfo.photo} alt={data.personalInfo.name} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500" /><h1 className="text-4xl font-bold">{data.personalInfo.name}</h1><p className="text-xl text-blue-600">{data.personalInfo.designation}</p></header><section className="mt-8"><h2 className="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">About Me</h2><p>{data.about}</p></section><section className="mt-8"><h2 className="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Skills</h2><div className="flex flex-wrap gap-2">{data.skills.map(s => <div key={s.name} className="p-2 bg-blue-100 text-blue-800 rounded">{s.name}</div>)}</div></section><section className="mt-8"><h2 className="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Experience</h2>{data.experience.map(e => <div key={e.company} className="mb-4"><h3 className="text-xl font-semibold">{e.title} at {e.company}</h3><p className="text-sm text-gray-500">{e.duration}</p><p className="mt-1">{e.responsibilities}</p></div>)}</section><section className="mt-8"><h2 className="text-2xl font-bold border-b-2 border-blue-500 pb-2 mb-4">Projects</h2><div className="grid md:grid-cols-2 gap-6">{data.projects.map(p => <div key={p.name} className="border p-4 rounded-lg"><h3 className="text-xl font-semibold">{p.name}</h3><p className="text-sm text-gray-600 my-2">Tech: {p.stack}</p><p className="mb-4">{p.description}</p><a href={p.liveLink} className="text-blue-600 hover:underline">View Live</a></div>)}</div></section><footer className="text-center mt-12 pt-4 border-t"><p>Contact: {data.personalInfo.email}</p><div className="flex justify-center gap-4 mt-2">{data.socialLinks.map(l => <a href={l.url} key={l.name} className="text-blue-600 hover:underline">{l.name}</a>)}</div></footer></div>);
-
-
-// export default Template1;
-
-//  eitai thik chilo 
-
-
-
 import React, { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 

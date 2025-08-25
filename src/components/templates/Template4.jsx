@@ -1,6 +1,82 @@
 import React from 'react';
 
-const Template4 = ({ data }) => ( /* Minimalist Elegant */ <div className="font-serif bg-gray-50 text-gray-700 p-12"><header className="mb-16 text-left border-b-2 pb-8"><h1 className="text-6xl font-thin tracking-widest">{data.personalInfo.name.toUpperCase()}</h1><p className="text-lg text-gray-500 mt-2">{data.personalInfo.designation}</p></header><div className="grid grid-cols-1 md:grid-cols-3 gap-12"><div className="md:col-span-1 space-y-10"><section><h2 className="text-xl font-semibold tracking-widest mb-3">CONTACT</h2><div className="space-y-1 text-gray-600">{data.socialLinks.map(l => <a href={l.url} key={l.name} className="block hover:text-black">{l.name}</a>)}<p>{data.personalInfo.email}</p></div></section><section><h2 className="text-xl font-semibold tracking-widest mb-3">SKILLS</h2><ul className="text-gray-600">{data.skills.map(s => <li key={s.name}>{s.name}</li>)}</ul></section></div><div className="md:col-span-2"><section><h2 className="text-xl font-semibold tracking-widest mb-3">ABOUT</h2><p className="leading-relaxed">{data.about}</p></section><section className="mt-10"><h2 className="text-xl font-semibold tracking-widest mb-3">PROJECTS</h2><div className="space-y-6">{data.projects.map(p => <div key={p.name}><h3 className="text-2xl font-normal">{p.name}</h3><p className="text-sm text-gray-500">{p.stack}</p><p className="mt-2 leading-relaxed">{p.description}</p></div>)}</div></section></div></div></div>);
+const Template4 = ({ data }) => (
+    /* Minimalist Elegant */
+    <div className="font-serif bg-gray-50 text-gray-700 p-12">
+        <header className="mb-16 text-left border-b-2 pb-8">
+            <h1 className="text-6xl font-thin tracking-widest">
+                {data.personalInfo.name.toUpperCase()}
+            </h1>
+            <p className="text-lg text-gray-500 mt-2">
+                {data.personalInfo.designation}
+            </p>
+        </header>
 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Left Column */}
+            <div className="md:col-span-1 space-y-10">
+                {/* Contact Section */}
+                <section>
+                    <h2 className="text-xl font-semibold tracking-widest mb-3">
+                        CONTACT
+                    </h2>
+                    <div className="space-y-1 text-gray-600">
+                        {data.socialLinks.map((l) => (
+                            <a
+                                href={l.url}
+                                key={l.name}
+                                className="block hover:text-black"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {l.name}
+                            </a>
+                        ))}
+                        <p>{data.personalInfo.email}</p>
+                    </div>
+                </section>
+
+                {/* Skills Section */}
+                <section>
+                    <h2 className="text-xl font-semibold tracking-widest mb-3">
+                        SKILLS
+                    </h2>
+                    <ul className="text-gray-600">
+                        {data.skills.map((s) => (
+                            <li key={s.name}>{s.name}</li>
+                        ))}
+                    </ul>
+                </section>
+            </div>
+
+            {/* Right Column */}
+            <div className="md:col-span-2">
+                {/* About Section */}
+                <section>
+                    <h2 className="text-xl font-semibold tracking-widest mb-3">
+                        ABOUT
+                    </h2>
+                    <p className="leading-relaxed">{data.about}</p>
+                </section>
+
+                {/* Projects Section */}
+                <section className="mt-10">
+                    <h2 className="text-xl font-semibold tracking-widest mb-3">
+                        PROJECTS
+                    </h2>
+                    <div className="space-y-6">
+                        {data.projects.map((p) => (
+                            <div key={p.name}>
+                                <h3 className="text-2xl font-normal">{p.name}</h3>
+                                <p className="text-sm text-gray-500">{p.stack}</p>
+                                <p className="mt-2 leading-relaxed">{p.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+);
 
 export default Template4;

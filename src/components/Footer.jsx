@@ -5,6 +5,7 @@ import {
   FaFacebook,
   FaTwitter,
   FaGithub,
+  FaBriefcase,
 } from "react-icons/fa";
 
 const Footer = () => {
@@ -42,11 +43,10 @@ const Footer = () => {
               <h3 className="font-semibold mb-4 text-indigo-500 dark:text-purple-500">Categories</h3>
               <ul className="space-y-2">
                 {[
-                  { path: "#", label: "Web Development & Tech" },
-                  { path: "#", label: "Graphics & Design" },
-                  { path: "#", label: "Digital Marketing" },
-                  { path: "#", label: "Writing & Translation" },
-                  { path: "#", label: "Video & Animation" },
+                  { path: "#template1", label: " Light" },
+                  { path: "#template2", label: " Dark" },
+                  { path: "#template3", label: " Creative" },
+                  { path: "#template5", label: " Exclusive" },
                 ].map(({ path, label }) => (
                   <li key={path}>
                     <a
@@ -60,6 +60,7 @@ const Footer = () => {
               </ul>
             </div>
 
+
             {/* Social Links */}
             <div>
               <h3 className="font-semibold mb-4 text-indigo-500 dark:text-purple-500">Social Links</h3>
@@ -69,7 +70,8 @@ const Footer = () => {
                   { href: "https://www.linkedin.com/in/yousufali156/", icon: <FaLinkedin />, label: "LinkedIn" },
                   { href: "https://www.instagram.com/mdyousufali001", icon: <FaInstagram />, label: "Instagram" },
                   { href: "https://twitter.com", icon: <FaTwitter />, label: "Twitter" },
-                  { href: "https://github.com/yousufali156", icon: <FaGithub />, label: "GitHub" },
+                  { href: "https://yousufali-portfolio.vercel.app/", icon: <FaBriefcase />, label: "Portfolio" },
+                  { href: "https://github.com/yousufali156", icon: <FaGithub />, label: "GitHub" }
                 ].map(({ href, icon, label }) => (
                   <a
                     key={label}
@@ -90,7 +92,7 @@ const Footer = () => {
               <h3 className="font-semibold mb-4 text-indigo-500 dark:text-purple-500">Contact Us</h3>
               <ul className="space-y-3">
                 <li>
-                  📧 <a href="mailto:support@portfogen.com" className="hover:underline hover:text-indigo-600 dark:hover:text-purple-400 transition-colors duration-200">support@portfogen.com</a>
+                  📧 <a href="mailto:mdyousufali.dev@gmail.com" className="hover:underline hover:text-indigo-600 dark:hover:text-purple-400 transition-colors duration-200">support@portfogen.com</a>
                 </li>
                 <li>
                   📞 <a href="tel:+8801754954385" className="hover:underline hover:text-indigo-600 dark:hover:text-purple-400 transition-colors duration-200">+880 1754 954385</a>
